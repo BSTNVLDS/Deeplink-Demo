@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DeepLink</string>
+    <string name="title_activity_dynamic_link">DynamicLinkActivity</string>
+    <string name="title_activity_deep_link">DeppLinkActivity</string>
+    <string name="action_deeplink">DeepLink</string>
+    <string name="action_dynamiclink">DynamicLink</string>
+
+</resources>

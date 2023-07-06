@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.accenture.deeplink">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher_deep"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_deep_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DeepLink"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DynamicLinkActivity"
+            android:exported="true"
+            android:label="@string/title_activity_dynamic_link"
+            android:theme="@style/Theme.DeepLink">
+            <intent-filter android:label="dynamicLink">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.deeplinkdemodemo.page.link"
+                    android:pathPrefix="/deeplink"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DeepLinkActivity"
+            android:exported="true"
+            android:label="@string/title_activity_deep_link">
+
+            <intent-filter android:label="deepLink">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.accenture.com"
+                    android:pathPrefix="/deeplink"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
